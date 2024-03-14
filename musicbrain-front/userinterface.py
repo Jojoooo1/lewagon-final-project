@@ -24,12 +24,18 @@ def main():
     uploaded_file = st.file_uploader("Choose a CSV file...", type=["csv"])
 
     if uploaded_file is not None:
+        # Display progress message while uploading
+        st.text("Uploading data...")
+
         # Read the CSV file as a pandas DataFrame
         df = pd.read_csv(uploaded_file)
 
         # Display the head of the uploaded data
         st.write('Head of Uploaded Data:')
         st.write(df.head())
+
+        # Display success message after upload is complete
+        st.markdown("Successfully uploaded!:white_check_mark:")
 
         # Button to trigger prediction
         if st.button('Predict'):
