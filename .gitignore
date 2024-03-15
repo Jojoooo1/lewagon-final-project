@@ -1,4 +1,6 @@
 .env
+.env.yaml
+.env-*
 
 # OS generated files #
 ######################
@@ -21,7 +23,6 @@ mlruns
 *.sqlite
 # IDE #
 *.vscode
-
 
 # Challengify - test challengification files
 *_challengify*
