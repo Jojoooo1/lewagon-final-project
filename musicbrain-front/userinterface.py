@@ -1,6 +1,7 @@
 
 # Import necessary libraries
 import json
+import os
 import streamlit as st
 import requests
 import pandas as pd
@@ -8,12 +9,9 @@ import numpy as np
 import plotly.express as px
 import time
 
-
-
 # Define the URL of your Fast API
-
-API_URL = "http://127.0.0.1:8000/predict/csv"
-
+BASE_URL = os.environ.get("BASE_URL")
+API_URL = f"http://{BASE_URL}/predict/csv"
 
 # Create the Streamlit app
 def main():
