@@ -41,7 +41,7 @@ async def predict(file: UploadFile = File(None)):
     contents = await file.read()
 
     try:
-        X_pred = pd.read_csv(io.BytesIO(contents))
+        X_pred = pd.read_csv(io.BytesIO(contents), header=None)
         y_pred = app.state.model.predict(X_pred)
 
         result = int_to_music_label(y_pred)
