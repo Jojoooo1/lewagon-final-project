@@ -7,4 +7,6 @@ COPY requirements_backend.txt /requirements.txt
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
-CMD uvicorn musicbrain.api.fast:app --host 0.0.0.0
+EXPOSE 8080
+
+CMD ["uvicorn", "musicbrain.api.fast:app", "--host", "0.0.0.0", "--port", "8080"]
