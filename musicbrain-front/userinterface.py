@@ -1,6 +1,5 @@
 
 # Import necessary libraries
-import json
 import os
 import streamlit as st
 import requests
@@ -11,7 +10,7 @@ import time
 
 # Define the URL of your Fast API
 BASE_URL = os.environ.get("BASE_URL")
-API_URL = f"http://{BASE_URL}/predict/csv"
+API_URL = f"{BASE_URL}/predict/csv"
 
 # Create the Streamlit app
 def main():
@@ -27,7 +26,7 @@ def main():
         st.text("Uploading data...")
 
         # Read the CSV file as a pandas DataFrame
-        df = pd.read_csv(uploaded_file)
+        df = pd.read_csv(uploaded_file, header=None)
 
         # Display the head of the uploaded data
         st.write('Head of Uploaded Data:')
@@ -42,7 +41,7 @@ def main():
             progress_bar = st.progress(0)
 
             # Function to make prediction using the API
-            def make_prediction(input_data):
+            def make_prediction(uploaded_file):
 
                 start_time = time.time()  # Record the start time
 
