@@ -17,6 +17,7 @@ API_URL = "http://127.0.0.1:8000/predict/csv"
 
 # Create the Streamlit app
 def main():
+
     st.title('Music Genre Classification')
     st.write('Upload a CSV file containing vectorized data to classify its music genre:')
 
