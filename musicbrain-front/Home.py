@@ -1,13 +1,14 @@
 import streamlit as st
 from graphviz import Digraph
 
-# project description
 
-st.title("The project")
+st.set_page_config(page_title = "MusicBrain app")
 
-st.header("Contextualizing our project")
+st.header("Classifying The Brain on Music")
+st.subheader("Machine Learning for Brain Music Classification")
 
-st.subheader("Why create a model to classify music genres from brain images?")
+# st.header("Contextualizing our project")
+# st.subheader("Why create a model to classify music genres from brain images?")
 
 st.markdown('''
             ***Neural decoding models*** aim to interpret mental states from neural activity recordings, utilizing various neuroimaging modalities such as fMRI, ECoG, EEG, and fNIRS.
@@ -56,5 +57,8 @@ def main():
     # Render the flowchart
     st.graphviz_chart(dot)
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
+
+
+

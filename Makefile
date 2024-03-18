@@ -4,6 +4,9 @@ SHELL := /bin/bash
 PROJECT_ID=le-wagon-411314
 REGION=us-east1
 
+reload-env:
+	direnv allow && direnv reload
+
 help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 	
@@ -15,13 +18,13 @@ run_backend: ## Run the API
 	uvicorn musicbrain.api.fast:app --reload --port 8080
 
 run_frontend: ## Run the API
-	streamlit run ./musicbrain-front/userinterface.py --server.enableXsrfProtection=false
+	streamlit run ./musicbrain-front/Home.py --server.enableXsrfProtection=false
 
 docker_build:
 	docker build -f ./musicbrain/Dockerfile . -t musicbrain
 
 docker_build_prod:
-	docker build -f ./musicbrain/Dockerfile -t ${REGION}-docker.pkg.dev/${PROJECT_ID}/musicbrain:prod .
+	docker build -f ./musicbrain/Dockerfile -t ${REGION}-docker.pkg.dev/${PROJECT_ID}/musicbrain/musicbrain:prod .
 
 docker_push_prod:
 	docker push ${REGION}-docker.pkg.dev/${PROJECT_ID}/musicbrain/musicbrain:prod
