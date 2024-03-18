@@ -40,7 +40,7 @@ def main():
 
         st.text("Uploading data...")
         df = pd.read_csv(uploaded_file, header=None)
-        
+
         st.write('Data:')
         st.write(df.head())
 
@@ -48,7 +48,7 @@ def main():
 
         if st.button('Predict'):
             progress_bar = st.progress(0)
-            
+
             response, time_taken = make_prediction(uploaded_file)
             st.write(f"Time taken for prediction: {time_taken:.2f} seconds")
             progress_bar.progress(100)
@@ -57,10 +57,10 @@ def main():
                 music_labels = response['music_labels'][0]
                 music_labels_index = music_labels.index(max(music_labels))
                 st.title('Results:')
-                
+
                 root_path = os.path.dirname(sys.argv[0])
                 image_path = os.path.join(root_path, "images", music_files.get(music_labels_index))
-                
+
                 image = open(image_path, 'rb').read()
                 st.image(image, width=500, use_column_width=False)
 
