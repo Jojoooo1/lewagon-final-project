@@ -12,4 +12,4 @@ st.subheader("Machine Learning for Brain Music Classification", divider='gray')
 
 
 
-st.link_button("Go to Project :brain:", "http://localhost:8501/Project")
+#st.link_button("Go to Project :brain:", "http://localhost:8501/Project")
