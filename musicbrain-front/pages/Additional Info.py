@@ -24,6 +24,9 @@ st.markdown('''The **testing data** (test.csv) consists of 40 event-related brai
 
 # contextualization
 
+
+st.subheader("2. Contextualization")
+
 st.markdown('''
             ***Neural decoding models*** aim to interpret mental states from neural activity recordings, utilizing various neuroimaging modalities such as fMRI, ECoG, EEG, and fNIRS.
             These models have been applied to decode diverse activities including affective states, visual imagery, and semantic information.

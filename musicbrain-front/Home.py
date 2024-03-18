@@ -4,7 +4,7 @@ from graphviz import Digraph
 
 st.set_page_config(page_title = "MusicBrain app")
 
-st.header("Classifying The Brain on Music")
+st.header("Classifying The Brain on Music :brain:")
 st.subheader("Machine Learning for Brain Music Classification")
 
 # st.header("Contextualizing our project")
@@ -14,7 +14,7 @@ st.subheader("Machine Learning for Brain Music Classification")
 text_box1 = "Decoding models"
 text_box2 = '''**Applications:**
             neuroscience, psychology, and diagnostic medicine'''
-text_box3 = "**Understanding the brain**: advancements in technology and its application in medicine, psychology, bioengineering and so on"
+text_box3 = "**Understanding the brain**: led to advancements in technology and its application in medicine, psychology, bioengineering and so on"
 
 # Define the layout for the flow chart using columns
 col1, col2, col3 = st.columns(3)
@@ -34,7 +34,7 @@ st.image("https://media.springernature.com/full/springer-static/image/art%3A10.1
 
 st.subheader("Objective")
 
-st.markdown('''For our project the data was already ready to be used in our model.The contextualization above was to clarify from **where** the information that we
+st.markdown('''For our project the data was already ready to be used in our model. The contextualization above was to clarify from **where** the information that we
             used came from and also for **better understanding** of why our project is ***impactful***.
             ''')
 
